@@ -1,0 +1,24 @@
+_________________________________________________________________
+module com.astier.bts.client_tcp_prof {
+    ...
+    requires totp.main;
+
+    ...
+}
+_________________________________________________________________
+
+_________________________________________________________________
+build.gradel.kts
+    ...
+
+repositories {
+    ...
+    maven { url = uri("https://jitpack.io") }
+    ...
+}
+
+dependencies {
+    ...
+    implementation("com.github.MoserBTS:totp:1.0.2")
+    ...
+}
