@@ -17,10 +17,17 @@ import javax.crypto.spec.SecretKeySpec;
 
 
 public class Totp {
+
+
+
     // Secret Base32 partagé avec l'application d'authentification.
-    private static final String CLEF_TOTP = "53UPAEE2VF5CXGZ6MHDE7W64VRP7CBDB";
-    private static final int PERIODE_SECONDES = 30;
-    private static final int NOMBRE_CHIFFRES = 6;
+    private String CLEF_TOTP = "";
+    private final int PERIODE_SECONDES = 30;
+    private final int NOMBRE_CHIFFRES = 6;
+
+    public Totp(String CLEF_TOTP) {
+        this.CLEF_TOTP = CLEF_TOTP;
+    }
 
     private int codePourCompteur() throws Exception {
         long compteur = System.currentTimeMillis() / 1000L / PERIODE_SECONDES;
